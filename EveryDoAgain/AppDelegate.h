@@ -9,17 +9,37 @@
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
 
+
+#
+# pragma mark - Interface
+#
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
+
+#
+# pragma mark Properties
+#
 
 @property (strong, nonatomic) UIWindow *window;
 
+#
+# pragma mark Core Data Properties
+#
+
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
-@property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+@property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 
-- (void)saveContext;
-- (NSURL *)applicationDocumentsDirectory;
+#
+# pragma mark Core Data Helpers
+#
 
+- (void)saveManagedObjectContext;
+
+#
+# pragma mark Helpers
+#
+
++ (NSURL *)applicationDocumentsDirectoryURL;
 
 @end
-
