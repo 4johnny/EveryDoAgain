@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Todo.h"
 
 
 #
@@ -19,7 +20,7 @@
 # pragma mark Properties
 #
 
-@property (strong, nonatomic) id detailItem;
+@property (strong, nonatomic) Todo* todo;
 
 #
 # pragma mark Outlets

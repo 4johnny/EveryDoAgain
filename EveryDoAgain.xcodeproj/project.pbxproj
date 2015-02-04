@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B2CE9EBB1A82246600BDB243 /* Todo.m in Sources */ = {isa = PBXBuildFile; fileRef = B2CE9EBA1A82246600BDB243 /* Todo.m */; };
 		B2F8BA981A81A5BD00B40D3C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F8BA971A81A5BD00B40D3C /* main.m */; };
 		B2F8BA9B1A81A5BD00B40D3C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F8BA9A1A81A5BD00B40D3C /* AppDelegate.m */; };
 		B2F8BA9E1A81A5BD00B40D3C /* EveryDoAgain.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B2F8BA9C1A81A5BD00B40D3C /* EveryDoAgain.xcdatamodeld */; };
@@ -29,6 +30,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B2CE9EB91A82246600BDB243 /* Todo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Todo.h; sourceTree = "<group>"; };
+		B2CE9EBA1A82246600BDB243 /* Todo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Todo.m; sourceTree = "<group>"; };
 		B2F8BA921A81A5BD00B40D3C /* EveryDoAgain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EveryDoAgain.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2F8BA961A81A5BD00B40D3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2F8BA971A81A5BD00B40D3C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -92,6 +95,8 @@
 				B2F8BAA01A81A5BD00B40D3C /* MasterViewController.m */,
 				B2F8BAA21A81A5BD00B40D3C /* DetailViewController.h */,
 				B2F8BAA31A81A5BD00B40D3C /* DetailViewController.m */,
+				B2CE9EB91A82246600BDB243 /* Todo.h */,
+				B2CE9EBA1A82246600BDB243 /* Todo.m */,
 				B2F8BAA51A81A5BD00B40D3C /* Main.storyboard */,
 				B2F8BA9C1A81A5BD00B40D3C /* EveryDoAgain.xcdatamodeld */,
 				B2F8BA951A81A5BD00B40D3C /* Supporting Files */,
@@ -228,6 +233,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2F8BAA41A81A5BD00B40D3C /* DetailViewController.m in Sources */,
+				B2CE9EBB1A82246600BDB243 /* Todo.m in Sources */,
 				B2F8BAA11A81A5BD00B40D3C /* MasterViewController.m in Sources */,
 				B2F8BA9E1A81A5BD00B40D3C /* EveryDoAgain.xcdatamodeld in Sources */,
 				B2F8BA9B1A81A5BD00B40D3C /* AppDelegate.m in Sources */,
@@ -424,6 +430,7 @@
 				B2F8BABD1A81A5BD00B40D3C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B2F8BABE1A81A5BD00B40D3C /* Build configuration list for PBXNativeTarget "EveryDoAgainTests" */ = {
 			isa = XCConfigurationList;
@@ -432,6 +439,7 @@
 				B2F8BAC01A81A5BD00B40D3C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

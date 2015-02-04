@@ -32,11 +32,11 @@
 #
 
 
-- (void)setDetailItem:(id)detailItem {
+- (void)setTodo:(Todo*)todo {
 	
-	if (_detailItem == detailItem) return;
+	if (_todo == todo) return;
 		
-	_detailItem = detailItem;
+	_todo = todo;
 
 	[self configureView];
 }
@@ -72,9 +72,9 @@
 	
 	// Update the user interface for the detail item.
 	
-	if (!self.detailItem) return;
-		
-	self.detailDescriptionLabel.text = [[self.detailItem valueForKey:@"timeStamp"] description];
+	if (!self.todo) return;
+
+	self.detailDescriptionLabel.text = self.todo.titleText;
 }
 
 

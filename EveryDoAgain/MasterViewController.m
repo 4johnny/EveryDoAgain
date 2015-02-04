@@ -7,7 +7,21 @@
 //
 
 #import "MasterViewController.h"
+#import "AppDelegate.h"
 #import "DetailViewController.h"
+
+
+#
+# pragma mark - Constants
+#
+
+#define MOC_CACHE_NAME	@"Master"
+
+#define ENTITY_NAME		@"Todo"
+#define ENTITY_SORT_KEY	@"titleText"
+
+#define TABLE_VIEW_CELL_ID	@"Cell"
+#define SEQUE_ID_DETAIL		@"showDetail"
 
 
 #
@@ -76,14 +90,14 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 	
-	if ([[segue identifier] isEqualToString:@"showDetail"]) {
+	if ([segue.identifier isEqualToString:SEQUE_ID_DETAIL]) {
 		
 		// Inject Core Data Managed Object at selected row into Detail View Controller
 		NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-		NSManagedObject *managedObject = [self.fetchedResultsController objectAtIndexPath:indexPath];
-		UINavigationController* detailNavigationController = segue.destinationViewController;
+		Todo *todo = (Todo *)[self.fetchedResultsController objectAtIndexPath:indexPath];
+		UINavigationController *detailNavigationController = segue.destinationViewController;
 		DetailViewController *detailViewController = (DetailViewController *)detailNavigationController.topViewController;
-		detailViewController.detailItem = managedObject;
+		detailViewController.todo = todo;
 		detailViewController.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
 		detailViewController.navigationItem.leftItemsSupplementBackButton = YES;
 	}
@@ -109,7 +123,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	
-	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:TABLE_VIEW_CELL_ID forIndexPath:indexPath];
 	[self configureCell:cell atIndexPath:indexPath];
 	
 	return cell;
@@ -153,19 +167,19 @@
 	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
 	
 	// Edit the entity name as appropriate.
-	NSEntityDescription *entity = [NSEntityDescription entityForName:@"Event" inManagedObjectContext:self.managedObjectContext];
+	NSEntityDescription *entity = [NSEntityDescription entityForName:ENTITY_NAME inManagedObjectContext:self.managedObjectContext];
 	[fetchRequest setEntity:entity];
 	
 	// Set the batch size to a suitable number.
 	[fetchRequest setFetchBatchSize:20];
 	
 	// Edit the sort key as appropriate.
-	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"timeStamp" ascending:NO];
+	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:ENTITY_SORT_KEY ascending:NO];
 	[fetchRequest setSortDescriptors:@[sortDescriptor]];
 	
 	// Edit the section name key path and cache name if appropriate.
 	// nil for section name key path means "no sections".
-	NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:@"Master"];
+	NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:MOC_CACHE_NAME];
 	aFetchedResultsController.delegate = self;
 	self.fetchedResultsController = aFetchedResultsController;
 	
@@ -265,20 +279,12 @@
 	NSManagedObjectContext *moc = self.fetchedResultsController.managedObjectContext;
 	NSEntityDescription *entity = self.fetchedResultsController.fetchRequest.entity;
 	
-	NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:entity.name inManagedObjectContext:moc];
+	Todo *newTodo = [NSEntityDescription insertNewObjectForEntityForName:entity.name inManagedObjectContext:moc];
+	newTodo.titleText = newTodo.description;
 	
-	// If appropriate, configure the new managed object
-	// Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template
-	[newManagedObject setValue:[NSDate date] forKey:@"timeStamp"];
-	
-	// Save the context
-	NSError *error = nil;
-	if ([moc save:&error]) return;
-	
-	// TODO: Replace this with code to handle the error appropriately.
-	// abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-	NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-	abort();
+	// Save the Managed Object Context
+	AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+	[appDelegate saveManagedObjectContext];
 }
 
 
@@ -288,8 +294,8 @@
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
 	
-	NSManagedObject *managedObject = [self.fetchedResultsController objectAtIndexPath:indexPath];
-	cell.textLabel.text = [[managedObject valueForKey:@"timeStamp"] description];
+	Todo *todo = [self.fetchedResultsController objectAtIndexPath:indexPath];
+	cell.textLabel.text = todo.titleText;
 }
 
 
