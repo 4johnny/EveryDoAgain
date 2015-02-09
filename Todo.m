@@ -7,13 +7,15 @@
 //
 
 #import "Todo.h"
+#import "User.h"
 
 
 @implementation Todo
 
-@dynamic descriptionText;
-@dynamic titleText;
-@dynamic priorityNumber;
 @dynamic completed;
+@dynamic descriptionText;
+@dynamic priorityNumber;
+@dynamic titleText;
+@dynamic user;
 
 @end

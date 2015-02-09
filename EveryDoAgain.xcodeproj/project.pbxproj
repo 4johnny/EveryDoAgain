@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B2CE9EBB1A82246600BDB243 /* Todo.m in Sources */ = {isa = PBXBuildFile; fileRef = B2CE9EBA1A82246600BDB243 /* Todo.m */; };
+		B29446881A8231B400E42662 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = B29446871A8231B400E42662 /* User.m */; };
+		B294468B1A8231B400E42662 /* Todo.m in Sources */ = {isa = PBXBuildFile; fileRef = B294468A1A8231B400E42662 /* Todo.m */; };
 		B2F8BA981A81A5BD00B40D3C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F8BA971A81A5BD00B40D3C /* main.m */; };
 		B2F8BA9B1A81A5BD00B40D3C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F8BA9A1A81A5BD00B40D3C /* AppDelegate.m */; };
 		B2F8BA9E1A81A5BD00B40D3C /* EveryDoAgain.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B2F8BA9C1A81A5BD00B40D3C /* EveryDoAgain.xcdatamodeld */; };
@@ -30,8 +31,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B2CE9EB91A82246600BDB243 /* Todo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Todo.h; sourceTree = "<group>"; };
-		B2CE9EBA1A82246600BDB243 /* Todo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Todo.m; sourceTree = "<group>"; };
+		B29446861A8231B400E42662 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = ../User.h; sourceTree = "<group>"; };
+		B29446871A8231B400E42662 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = ../User.m; sourceTree = "<group>"; };
+		B29446891A8231B400E42662 /* Todo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Todo.h; path = ../Todo.h; sourceTree = "<group>"; };
+		B294468A1A8231B400E42662 /* Todo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Todo.m; path = ../Todo.m; sourceTree = "<group>"; };
 		B2F8BA921A81A5BD00B40D3C /* EveryDoAgain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EveryDoAgain.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2F8BA961A81A5BD00B40D3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2F8BA971A81A5BD00B40D3C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -95,8 +98,10 @@
 				B2F8BAA01A81A5BD00B40D3C /* MasterViewController.m */,
 				B2F8BAA21A81A5BD00B40D3C /* DetailViewController.h */,
 				B2F8BAA31A81A5BD00B40D3C /* DetailViewController.m */,
-				B2CE9EB91A82246600BDB243 /* Todo.h */,
-				B2CE9EBA1A82246600BDB243 /* Todo.m */,
+				B29446891A8231B400E42662 /* Todo.h */,
+				B294468A1A8231B400E42662 /* Todo.m */,
+				B29446861A8231B400E42662 /* User.h */,
+				B29446871A8231B400E42662 /* User.m */,
 				B2F8BAA51A81A5BD00B40D3C /* Main.storyboard */,
 				B2F8BA9C1A81A5BD00B40D3C /* EveryDoAgain.xcdatamodeld */,
 				B2F8BA951A81A5BD00B40D3C /* Supporting Files */,
@@ -232,12 +237,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B29446881A8231B400E42662 /* User.m in Sources */,
 				B2F8BAA41A81A5BD00B40D3C /* DetailViewController.m in Sources */,
-				B2CE9EBB1A82246600BDB243 /* Todo.m in Sources */,
 				B2F8BAA11A81A5BD00B40D3C /* MasterViewController.m in Sources */,
 				B2F8BA9E1A81A5BD00B40D3C /* EveryDoAgain.xcdatamodeld in Sources */,
 				B2F8BA9B1A81A5BD00B40D3C /* AppDelegate.m in Sources */,
 				B2F8BA981A81A5BD00B40D3C /* main.m in Sources */,
+				B294468B1A8231B400E42662 /* Todo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,7 +14,7 @@
 # pragma mark - Interface
 #
 
-@interface DetailViewController : UIViewController
+@interface DetailViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
 
 #
 # pragma mark Properties
@@ -27,6 +27,8 @@
 #
 
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
+
+@property (weak, nonatomic) IBOutlet UIPickerView *userPickerView;
 
 @end
 

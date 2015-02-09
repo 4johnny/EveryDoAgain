@@ -52,7 +52,11 @@
 	
 	// Do any additional setup after loading the view, typically from a nib.
 	
+//	[self.userPickerView.delegate = self];
+//	[self.userPickerView.dataSource = self];
+	
 	[self configureView];
+	
 }
 
 
@@ -60,6 +64,21 @@
 	[super didReceiveMemoryWarning];
 	
 	// Dispose of any resources that can be recreated.
+}
+
+
+#
+# pragma mark <UIPickerViewDataSource>
+#
+
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+	return 0;
+}
+
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+	return 0;
 }
 
 
