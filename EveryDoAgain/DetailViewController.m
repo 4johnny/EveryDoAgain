@@ -52,11 +52,10 @@
 	
 	// Do any additional setup after loading the view, typically from a nib.
 	
-//	[self.userPickerView.delegate = self];
-//	[self.userPickerView.dataSource = self];
+	self.userPickerView.dataSource = self;
+	self.userPickerView.delegate = self;
 	
 	[self configureView];
-	
 }
 
 
@@ -93,7 +92,8 @@
 	
 	if (!self.todo) return;
 
-	self.detailDescriptionLabel.text = self.todo.titleText;
+	self.titleLabel.text = self.todo.titleText;
+	self.descriptionLabel.text = self.todo.descriptionText;
 }
 
 

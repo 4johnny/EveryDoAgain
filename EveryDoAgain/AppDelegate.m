@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "DetailViewController.h"
-#import "MasterViewController.h"
+#import "TodoTableViewController.h"
 
 
 #
@@ -56,7 +56,7 @@
 
 	// Inject Core Data Managed Object Context (MOC) into Master View Controller
 	UINavigationController *masterNavigationController = splitViewController.viewControllers.firstObject;
-	MasterViewController *masterViewController = (MasterViewController *)masterNavigationController.topViewController;
+	TodoTableViewController *masterViewController = (TodoTableViewController *)masterNavigationController.topViewController;
 	masterViewController.managedObjectContext = self.managedObjectContext;
 	
 	return YES;

@@ -12,7 +12,7 @@
 		B2F8BA981A81A5BD00B40D3C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F8BA971A81A5BD00B40D3C /* main.m */; };
 		B2F8BA9B1A81A5BD00B40D3C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F8BA9A1A81A5BD00B40D3C /* AppDelegate.m */; };
 		B2F8BA9E1A81A5BD00B40D3C /* EveryDoAgain.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B2F8BA9C1A81A5BD00B40D3C /* EveryDoAgain.xcdatamodeld */; };
-		B2F8BAA11A81A5BD00B40D3C /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F8BAA01A81A5BD00B40D3C /* MasterViewController.m */; };
+		B2F8BAA11A81A5BD00B40D3C /* TodoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F8BAA01A81A5BD00B40D3C /* TodoTableViewController.m */; };
 		B2F8BAA41A81A5BD00B40D3C /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F8BAA31A81A5BD00B40D3C /* DetailViewController.m */; };
 		B2F8BAA71A81A5BD00B40D3C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2F8BAA51A81A5BD00B40D3C /* Main.storyboard */; };
 		B2F8BAA91A81A5BD00B40D3C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2F8BAA81A81A5BD00B40D3C /* Images.xcassets */; };
@@ -41,8 +41,8 @@
 		B2F8BA991A81A5BD00B40D3C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B2F8BA9A1A81A5BD00B40D3C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		B2F8BA9D1A81A5BD00B40D3C /* EveryDoAgain.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EveryDoAgain.xcdatamodel; sourceTree = "<group>"; };
-		B2F8BA9F1A81A5BD00B40D3C /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
-		B2F8BAA01A81A5BD00B40D3C /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		B2F8BA9F1A81A5BD00B40D3C /* TodoTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodoTableViewController.h; sourceTree = "<group>"; };
+		B2F8BAA01A81A5BD00B40D3C /* TodoTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodoTableViewController.m; sourceTree = "<group>"; };
 		B2F8BAA21A81A5BD00B40D3C /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		B2F8BAA31A81A5BD00B40D3C /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		B2F8BAA61A81A5BD00B40D3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -71,6 +71,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B23163701A997DFF00221D84 /* Data Model (Auto-generated) */ = {
+			isa = PBXGroup;
+			children = (
+				B2F8BA9C1A81A5BD00B40D3C /* EveryDoAgain.xcdatamodeld */,
+				B29446891A8231B400E42662 /* Todo.h */,
+				B294468A1A8231B400E42662 /* Todo.m */,
+				B29446861A8231B400E42662 /* User.h */,
+				B29446871A8231B400E42662 /* User.m */,
+			);
+			name = "Data Model (Auto-generated)";
+			sourceTree = "<group>";
+		};
 		B2F8BA891A81A5BD00B40D3C = {
 			isa = PBXGroup;
 			children = (
@@ -94,16 +106,12 @@
 			children = (
 				B2F8BA991A81A5BD00B40D3C /* AppDelegate.h */,
 				B2F8BA9A1A81A5BD00B40D3C /* AppDelegate.m */,
-				B2F8BA9F1A81A5BD00B40D3C /* MasterViewController.h */,
-				B2F8BAA01A81A5BD00B40D3C /* MasterViewController.m */,
+				B2F8BA9F1A81A5BD00B40D3C /* TodoTableViewController.h */,
+				B2F8BAA01A81A5BD00B40D3C /* TodoTableViewController.m */,
 				B2F8BAA21A81A5BD00B40D3C /* DetailViewController.h */,
 				B2F8BAA31A81A5BD00B40D3C /* DetailViewController.m */,
-				B29446891A8231B400E42662 /* Todo.h */,
-				B294468A1A8231B400E42662 /* Todo.m */,
-				B29446861A8231B400E42662 /* User.h */,
-				B29446871A8231B400E42662 /* User.m */,
 				B2F8BAA51A81A5BD00B40D3C /* Main.storyboard */,
-				B2F8BA9C1A81A5BD00B40D3C /* EveryDoAgain.xcdatamodeld */,
+				B23163701A997DFF00221D84 /* Data Model (Auto-generated) */,
 				B2F8BA951A81A5BD00B40D3C /* Supporting Files */,
 			);
 			path = EveryDoAgain;
@@ -239,7 +247,7 @@
 			files = (
 				B29446881A8231B400E42662 /* User.m in Sources */,
 				B2F8BAA41A81A5BD00B40D3C /* DetailViewController.m in Sources */,
-				B2F8BAA11A81A5BD00B40D3C /* MasterViewController.m in Sources */,
+				B2F8BAA11A81A5BD00B40D3C /* TodoTableViewController.m in Sources */,
 				B2F8BA9E1A81A5BD00B40D3C /* EveryDoAgain.xcdatamodeld in Sources */,
 				B2F8BA9B1A81A5BD00B40D3C /* AppDelegate.m in Sources */,
 				B2F8BA981A81A5BD00B40D3C /* main.m in Sources */,

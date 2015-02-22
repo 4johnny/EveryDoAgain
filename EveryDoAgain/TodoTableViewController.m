@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Empath Solutions. All rights reserved.
 //
 
-#import "MasterViewController.h"
+#import "TodoTableViewController.h"
 #import "AppDelegate.h"
 #import "DetailViewController.h"
 
@@ -17,8 +17,8 @@
 
 #define MOC_CACHE_NAME	@"Master"
 
-#define ENTITY_NAME		@"Todo"
-#define ENTITY_SORT_KEY	@"titleText"
+#define TODO_ENTITY_NAME		@"Todo"
+#define TODO_ENTITY_SORT_KEY	@"titleText"
 
 #define TABLE_VIEW_CELL_ID	@"Cell"
 #define SEQUE_ID_DETAIL		@"showDetail"
@@ -29,7 +29,9 @@
 #
 
 
-@interface MasterViewController ()
+@interface TodoTableViewController ()
+
+@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 
 @end
 
@@ -39,7 +41,7 @@
 #
 
 
-@implementation MasterViewController
+@implementation TodoTableViewController
 
 
 #
@@ -72,6 +74,8 @@
 	
 	UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
 	self.navigationItem.rightBarButtonItem = addButton;
+
+	
 }
 
 
@@ -91,15 +95,16 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 	
 	if ([segue.identifier isEqualToString:SEQUE_ID_DETAIL]) {
-		
+
+		UINavigationController *detailNavigationController = segue.destinationViewController;
+		DetailViewController *detailViewController = (DetailViewController *)detailNavigationController.topViewController;
+		detailViewController.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
+		detailViewController.navigationItem.leftItemsSupplementBackButton = YES;
+
 		// Inject Core Data Managed Object at selected row into Detail View Controller
 		NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
 		Todo *todo = (Todo *)[self.fetchedResultsController objectAtIndexPath:indexPath];
-		UINavigationController *detailNavigationController = segue.destinationViewController;
-		DetailViewController *detailViewController = (DetailViewController *)detailNavigationController.topViewController;
 		detailViewController.todo = todo;
-		detailViewController.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
-		detailViewController.navigationItem.leftItemsSupplementBackButton = YES;
 	}
 }
 
@@ -167,14 +172,14 @@
 	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
 	
 	// Edit the entity name as appropriate.
-	NSEntityDescription *entity = [NSEntityDescription entityForName:ENTITY_NAME inManagedObjectContext:self.managedObjectContext];
+	NSEntityDescription *entity = [NSEntityDescription entityForName:TODO_ENTITY_NAME inManagedObjectContext:self.managedObjectContext];
 	[fetchRequest setEntity:entity];
 	
 	// Set the batch size to a suitable number.
 	[fetchRequest setFetchBatchSize:20];
 	
 	// Edit the sort key as appropriate.
-	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:ENTITY_SORT_KEY ascending:NO];
+	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:TODO_ENTITY_SORT_KEY ascending:NO];
 	[fetchRequest setSortDescriptors:@[sortDescriptor]];
 	
 	// Edit the section name key path and cache name if appropriate.
@@ -280,7 +285,8 @@
 	NSEntityDescription *entity = self.fetchedResultsController.fetchRequest.entity;
 	
 	Todo *newTodo = [NSEntityDescription insertNewObjectForEntityForName:entity.name inManagedObjectContext:moc];
-	newTodo.titleText = newTodo.description;
+	newTodo.titleText = @"New Todo";
+	newTodo.descriptionText = newTodo.description;
 	
 	// Save the Managed Object Context
 	AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
@@ -296,6 +302,7 @@
 	
 	Todo *todo = [self.fetchedResultsController objectAtIndexPath:indexPath];
 	cell.textLabel.text = todo.titleText;
+	cell.detailTextLabel.text = todo.descriptionText;
 }
 
 

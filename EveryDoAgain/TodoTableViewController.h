@@ -14,13 +14,12 @@
 # pragma mark - Interface
 #
 
-@interface MasterViewController : UITableViewController <NSFetchedResultsControllerDelegate>
+@interface TodoTableViewController : UITableViewController <NSFetchedResultsControllerDelegate>
 
 #
 # pragma mark Core Data Properties
 #
 
-@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 @end
