@@ -7,8 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "MainTabBarController.h"
 #import "DetailViewController.h"
-#import "TodoTableViewController.h"
 
 
 #
@@ -50,14 +50,14 @@
 	// Set up delegates
 	UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
 	splitViewController.delegate = self;
+	
 	UINavigationController *detailNavigationController = splitViewController.viewControllers.lastObject;
 	DetailViewController *detailViewController = (DetailViewController *)detailNavigationController.topViewController;
 	detailViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem;
 
 	// Inject Core Data Managed Object Context (MOC) into Master View Controller
-	UINavigationController *masterNavigationController = splitViewController.viewControllers.firstObject;
-	TodoTableViewController *masterViewController = (TodoTableViewController *)masterNavigationController.topViewController;
-	masterViewController.managedObjectContext = self.managedObjectContext;
+	MainTabBarController* mainTabBarController = splitViewController.viewControllers.firstObject;
+	mainTabBarController.managedObjectContext = self.managedObjectContext;
 	
 	return YES;
 }

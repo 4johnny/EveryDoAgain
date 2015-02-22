@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B25A836B1A99A6340025157D /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = B25A836A1A99A6340025157D /* MainTabBarController.m */; };
 		B29446881A8231B400E42662 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = B29446871A8231B400E42662 /* User.m */; };
 		B294468B1A8231B400E42662 /* Todo.m in Sources */ = {isa = PBXBuildFile; fileRef = B294468A1A8231B400E42662 /* Todo.m */; };
 		B2F8BA981A81A5BD00B40D3C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F8BA971A81A5BD00B40D3C /* main.m */; };
@@ -31,6 +32,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B25A83691A99A6340025157D /* MainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarController.h; sourceTree = "<group>"; };
+		B25A836A1A99A6340025157D /* MainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarController.m; sourceTree = "<group>"; };
 		B29446861A8231B400E42662 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = ../User.h; sourceTree = "<group>"; };
 		B29446871A8231B400E42662 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = ../User.m; sourceTree = "<group>"; };
 		B29446891A8231B400E42662 /* Todo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Todo.h; path = ../Todo.h; sourceTree = "<group>"; };
@@ -106,6 +109,8 @@
 			children = (
 				B2F8BA991A81A5BD00B40D3C /* AppDelegate.h */,
 				B2F8BA9A1A81A5BD00B40D3C /* AppDelegate.m */,
+				B25A83691A99A6340025157D /* MainTabBarController.h */,
+				B25A836A1A99A6340025157D /* MainTabBarController.m */,
 				B2F8BA9F1A81A5BD00B40D3C /* TodoTableViewController.h */,
 				B2F8BAA01A81A5BD00B40D3C /* TodoTableViewController.m */,
 				B2F8BAA21A81A5BD00B40D3C /* DetailViewController.h */,
@@ -251,6 +256,7 @@
 				B2F8BA9E1A81A5BD00B40D3C /* EveryDoAgain.xcdatamodeld in Sources */,
 				B2F8BA9B1A81A5BD00B40D3C /* AppDelegate.m in Sources */,
 				B2F8BA981A81A5BD00B40D3C /* main.m in Sources */,
+				B25A836B1A99A6340025157D /* MainTabBarController.m in Sources */,
 				B294468B1A8231B400E42662 /* Todo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
